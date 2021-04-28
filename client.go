@@ -73,7 +73,7 @@ Schema:
 	name String,
 	tags String,
 	val Float64,
-	ts DateTime64,
+	ts DateTime64(3),
 	updated DateTime DEFAULT now()
 ) ENGINE=MergeTree(date,(name,tags,ts),8192)
 
@@ -141,7 +141,7 @@ func (c *ClickhouseClient) Write(metrics []telegraf.Metric) (err error) {
 		name String,
 		tags String,
 		val Float64,
-		ts DateTime64,
+		ts DateTime64(3),
 		updated DateTime DEFAULT now()
 	) ENGINE=MergeTree(date,(name,tags,ts),8192)
 	`, c.Database, c.TableName)

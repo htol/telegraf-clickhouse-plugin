@@ -1,6 +1,6 @@
 # Telegraf output plugin 
 
-** TimeDate changed to TimeDate64 and updated modules
+** DateTime changed to DateTime64(3) and import of clickhouse fixed
 
 ## 1. How to use
 
